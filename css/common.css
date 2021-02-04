@@ -226,7 +226,7 @@ button:hover, button:focus, button:active {cursor: pointer;}
     padding: .75em 1.25em;
     text-align: center;
     font-weight: 500;
-    transition: .5s;
+    transition: .25s;
 }
 .btn_main:hover, .btn_main:focus, .btn_main:active {cursor: pointer;}
 .btn_1 {
@@ -236,6 +236,24 @@ button:hover, button:focus, button:active {cursor: pointer;}
 .btn_1:hover, .btn_1:focus, .btn_1:active {
     color: #fff;
     background-color: var(--color-2);
+}
+.btn_2 {
+    color: #fff;
+    background-color: var(--color-2);
+}
+.btn_2:hover, .btn_2:focus, .btn_2:active {
+    color: #fff;
+    background-color: var(--color-1);
+}
+.btn_3 {
+    border: 1px solid #E5E5E5;
+    color: rgb(21 25 32 / 50%);
+    background-color: #fff;
+}
+.btn_3:hover, .btn_3:focus, .btn_3:active {
+    border: 1px solid var(--color-2);
+    color: var(--color-2);
+    background-color: #fff;
 }
 
 
@@ -326,7 +344,7 @@ ol.breadcrumb {
     padding: 1.5em;
 }
 .m-body {
-    padding: 1em;
+    padding: 2em;
 }
 
 .close {
@@ -334,14 +352,16 @@ ol.breadcrumb {
     top: calc(50% - .5em);
     right: 2em;
     z-index: 100;
-    opacity: .7 !important;
     display: flex;
     font-size: 1em;
+    opacity: 1;
 }
 .close svg {
     width: 1em;
     height: 1em;
 }
+.close svg path {fill: #000;}
+.close:hover svg path {fill: var(--color-2);}
 .close:hover {opacity: 1 !important;}
 
 .modal-body {padding: 2em;}
