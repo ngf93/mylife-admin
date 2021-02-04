@@ -161,6 +161,7 @@ select:hover {cursor: pointer;}
     border:0 solid rgb(var(--color-2));
     border-width:0 2px 2px 0;
     -webkit-transform:rotateZ(45deg);
+    transform:rotateZ(45deg);
     margin: .15em .3em;
 }
 .checkbox label {
@@ -168,8 +169,6 @@ select:hover {cursor: pointer;}
     line-height: .9em;
 }
 
-input[type="checkbox"]+span, input[type="radio"]+span{-webkit-appearance:none;width:14px;height:14px;border:1px solid rgba(0,0,0,.3);outline:none;margin:5px;box-sizing:border-box;display:inline-block;}
-input[type="checkbox"]:checked+span:before{content:"";display:block;width:9px;height:14px;border:0 solid rgb(58, 153, 45);border-width:0 2px 2px 0;-webkit-transform:rotateZ(45deg);margin:-6px 3px;pointer-events:none;}
 
 
 /* radiobutton customization */
