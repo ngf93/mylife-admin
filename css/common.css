@@ -241,48 +241,17 @@ button:hover, button:focus, button:active {cursor: pointer;}
 
 /* Текстовые стили */
 h1 {
-    font-family: "Roboto";
     font-size: 2.25em;
     font-weight: 500;
     color: #252525;
     text-align: left;
     margin-bottom: 1em;
 }
-@media (max-width: 767px){h1 {font-size: 2.2em;}}
-@media (max-width: 575px){h1 {font-size: 2em;}}
-h2, h1.inner {
-    font-family: "Roboto";
+h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.75em;
     font-weight: 500;
-    margin: 2.5em 0 1em;
-    text-transform: uppercase;
-}
-h2::before, h2::after, h1.inner::before, h1.inner::after {
-    content: "________";
-    color: rgb(var(--color-2));
-    margin: 0 .5em;
-}
-@media (max-width: 767px){
-    h2, h1.inner {font-size: 1.8em;}
-    h2::before, h2::after, h1.inner::before, h1.inner::after {content: "____";}
-}
-@media (max-width: 575px){
-    h2, h1.inner {font-size: 1.5em;}
-    h2::before, h2::after, h1.inner::before, h1.inner::after {content: unset;}
-}
-h3 {
-    text-align: left;
-    font-size: 1.5em;
-    font-weight: 600;
-    line-height: 1em;
-    margin-bottom: .6em;
-}
-h4 {
-    text-align: left;
-    font-size: 1.3em;
-    font-weight: 500;
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
 
 .f_08 {font-size: .8em;}
@@ -346,41 +315,33 @@ ol.breadcrumb {
 
 /* Всплывающая форма обратной связи */
 .modal-dialog {
-    width: 60%;
-    max-width: 500px;
+    max-width: 650px;
 }
 .modal-content {
-    border-radius: 1em;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
 }
-.modal-body {padding: 2em;}
+.m-head {
+    background-color: #F8F8F8;
+    position: relative;
+    padding: 1.5em;
+}
+.m-body {
+    padding: 1em;
+}
+
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: calc(50% - .5em);
+    right: 2em;
     z-index: 100;
     opacity: .7 !important;
-    font-size: unset;
+    display: flex;
+    font-size: 1em;
 }
 .close svg {
-    width: 1.5em;
-    height: 1.5em;
-}
-.close svg g {
-    fill: var(--orange);
+    width: 1em;
+    height: 1em;
 }
 .close:hover {opacity: 1 !important;}
-@media (max-width: 767px){
-    .modal-dialog {width: 75%;}
-}
-@media (max-width: 575px){
-    .modal-dialog {
-        width: 95%;
-        margin: 2em auto;
-    }
-    .modal-body {padding: 1.5em;}
-    .close svg {
-        width: 20px;
-        height: 20px;
-    }
-}
+
+.modal-body {padding: 2em;}
