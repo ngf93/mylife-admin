@@ -67,4 +67,18 @@ $('#modal-publication').on('show.bs.modal', function (event) {
     modal.find('.mp-text').text('Вы уверены что хотите снять с публикации?');
     modal.find('.mp-btn-toggle').text('Снять с публикации');
   }
-})
+});
+
+/* password button state change */
+$(function () {
+  $(".pass_btn").click(function(){
+    let state = $(this).attr('data-state');
+    if(state == 'invisible'){
+      $(this).prev("input").attr('type', 'text');
+      $(this).attr('data-state', 'visible');
+    } else {
+      $(this).prev("input").attr('type', 'password');
+      $(this).attr('data-state', 'invisible');
+    }
+  });
+});
