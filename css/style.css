@@ -10,7 +10,7 @@ body {
     "header header"
     "sidebar main";
 }
-/* @media (max-width: 1620px){
+@media (max-width: 1620px){
     body {
         width: 1620px;
         grid-template-columns: 320px 1300px;
@@ -21,7 +21,7 @@ body {
         width: 1200px;
         grid-template-columns: 270px 930px;
     }
-} */
+}
 /* @media (max-width: 1024px){
     body {
         grid-template-areas: 
