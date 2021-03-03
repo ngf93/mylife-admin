@@ -1,31 +1,40 @@
 @import "common.css";
 
 body {
-    width: 100%;
+    width: 1920px;
     height: 100vh;
     display: grid;
     grid-template-rows: 70px auto;
     grid-template-columns: 320px auto;
     grid-template-areas: 
     "header header"
-    "sidebar main"; 
+    "sidebar main";
 }
-@media (max-width: 1199px){
+@media (max-width: 1620px){
     body {
-        grid-template-columns: 270px auto;
+        width: 1620px;
+        grid-template-columns: 320px 1300px;
     }
 }
-@media (max-width: 1024px){
+@media (max-width: 1200px){
+    body {
+        width: 1200px;
+        grid-template-columns: 270px 930px;
+    }
+}
+/* @media (max-width: 1024px){
     body {
         grid-template-areas: 
         "header header"
         "main main"; 
     }
-}
+} */
 
 header {
     grid-area: header;
     background-color: #343A40;
+    /* width: 100%;
+    height: 70px; */
 }
 .header-btn {
     display: flex;
@@ -38,7 +47,7 @@ header {
 .header-btn:hover svg path, .header-btn:active svg path {fill: var(--color-1);}
 .hamburger {display: none;}
 .logo {max-width: 250px;}
-@media (max-width: 1024px){
+/* @media (max-width: 1024px){
     .hamburger {display: block;}
 }
 @media (max-width: 767px){
@@ -46,7 +55,7 @@ header {
 }
 @media (max-width: 575px){
     .logo {display: none;}
-}
+} */
 
 
 aside {
@@ -56,6 +65,7 @@ aside {
     height: calc(100vh - 70px);
     overflow-y: auto;
     padding: 1.5em 0;
+    /* width: 320px; */
 }
 nav.menu ul {
     list-style: none;
@@ -102,11 +112,11 @@ nav.menu a:active, nav.menu a.active {
 }
 .close-aside svg path {fill: var(--color-1);}
 .close-aside:hover svg path, .close-aside:active svg path {fill: var(--color-2);}
-@media (max-width: 1199px){
+/* @media (max-width: 1199px){
     aside {padding: 1em 0;}
     nav.menu a {padding: 1em .5em 1em 1em;}
-}
-@media (max-width: 1024px){
+} */
+/* @media (max-width: 1024px){
     aside {
         position: fixed;
         top: 0;
@@ -124,7 +134,7 @@ nav.menu a:active, nav.menu a.active {
 }
 @media (max-width: 575px){
     aside {width: 100%;}
-}
+} */
 
 
 main {
@@ -133,10 +143,11 @@ main {
     padding: 2em;
     height: calc(100vh - 70px);
     overflow-y: auto;
+    /* width: 1600px; */
 }
-@media (max-width: 1199px){
+/* @media (max-width: 1199px){
     main {padding: 1em;}
-}
+} */
 .btn_sort svg path {fill: #dadada;}
 .btn_sort[data-sort="z-to-a"] svg path:first-child {fill: #52575C;}
 .btn_sort[data-sort="a-to-z"] svg path:last-child {fill: #52575C;}

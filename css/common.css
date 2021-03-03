@@ -62,9 +62,9 @@ body {
 @media (max-width: 1599px){
     body {font-size: 15px;}
 }
-@media (max-width: 1199px){
+/* @media (max-width: 1199px){
     body {font-size: 14px;}
-}
+} */
 
 
 a {color: inherit;}
@@ -140,22 +140,18 @@ select:hover {cursor: pointer;}
 
 .form-item {
     position: relative;
-  }
-  .form-item__input {
+}
+.form-item__input {
     overflow: hidden;
     position: absolute;
     opacity: 0;
     z-index: 10;
-  }
-  .form-item__label {
+}
+.form-item__label {
     position: relative;
     z-index: 2;;
     cursor: pointer;
-  }
-  /* .form-item__input:focus + .form-item__label, .form-item__label:hover {
-    box-shadow: 0 1px 3px #b8cdf9;
-    background-color: #b8cdf9;
-  } */
+}
 .list-files {
     list-style: none;
     margin: 0;
