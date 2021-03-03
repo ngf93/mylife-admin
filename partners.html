@@ -417,16 +417,30 @@
 						<div class="fw_5 mb-1">Ссылка</div>
 						<input type="text" placeholder="Ссылка на видео, статью" class="mb-3">
 						<div class="fw_5 mb-1">Изображение</div>
-						<div class="form-item mb-3">
-							<input class="form-item__input input-upload" type="file" id="files" name="files" multiple="multiple">
-							<div class="btn_main btn_1 orm-item__label">Добавить</div>
-							<!-- <label class="form-item__label" for="files">Загрузить файл(ы)</label> -->
+						<div class="img-group mb-3">
+							<div class="img_upload_box">
+								<img src="">
+								<input type="file">
+								<button type="button" class="del_upload_box"></button>
+							</div>
 						</div>
 						<div class="fw_5 mb-1">Видео</div>
-						<div class="form-item">
-							<input class="form-item__input input-upload" type="file" id="files" name="files" multiple="multiple">
-							<div class="btn_main btn_1 orm-item__label">Добавить</div>
-							<!-- <label class="form-item__label" for="files">Загрузить файл(ы)</label> -->
+						<div class="dynamic-inputs mb-3">
+							<div class="input-clone mt-2">
+								<input type="text" placeholder="Ссылка на видео">
+								<button>
+									<button type="button" class="btn_main btn_1" onclick="this.closest('.input-clone').remove();">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;" xml:space="preserve">
+											<polygon points="298.667,30.187 268.48,0 149.333,119.147 30.187,0 0,30.187 119.147,149.333 0,268.48 30.187,298.667 149.333,179.52 268.48,298.667 298.667,268.48 179.52,149.333"/>
+										</svg>
+									</button>
+								</button>
+							</div>
+							<button type="button" class="btn_main btn_1 add-input">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;" xml:space="preserve">
+									<polygon points="170.667,128 170.667,0 128,0 128,128 0,128 0,170.667 128,170.667 128,298.667 170.667,298.667 170.667,170.667 298.667,170.667 298.667,128"/>
+								</svg>
+							</button>
 						</div>
 						<div class="row justify-content-center mt-4">
 							<div class="col-xl-6">

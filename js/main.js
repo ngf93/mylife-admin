@@ -34,24 +34,6 @@ $(document).ready( function() {
 });
 
 
-/* file upload with preview list */
-$('.input-upload').on('change', function() {
-  var arrayFiles = this.files, // массив с выбранными фалами
-      formItem = this.parentNode, // родительский элемент, для того чтобы вставить список с файлами
-      listFiles = document.createElement('ul'), // список с файлами
-      li = ''; // файлы
-  // Если список с файлами уже вставлен в ДОМ, то удаляем его
-  if (formItem.querySelector('.list-files')) {
-    formItem.querySelector('.list-files').remove();
-  }
-  listFiles.className = 'list-files'; // добавим класс, чтобы было удобнее стилять
-  for (var i = 0; i < arrayFiles.length; i++) {
-    li += '<li>' + arrayFiles[i].name + '</li>'; // <li>Имя файла</li>
-  }
-  listFiles.innerHTML = li;
-  formItem.appendChild(listFiles);  
-});
-
 
 /* modal window for publication */
 $('#modal-publication').on('show.bs.modal', function (event) {
@@ -82,3 +64,52 @@ $(function () {
     }
   });
 });
+
+
+/* adding new inputs */
+$(document).ready( function() {
+  $(".add-input").click(function(){
+    let cloned_input = $(this).prev('.input-clone').clone(true);
+    $(this).after(cloned_input);
+  });
+});
+
+
+/* img upload */
+$(document).ready( function() {
+  $(document).on('change', '.img_upload_box input[type=file]', function(){
+      let maxFileSize = 2 * 1024 * 1024;
+      let imgUpload = $(this).prev("img");
+      let parentDiv = $(this).parents('.img-group');
+
+      let file = this.files[0];
+      if ( !file.type.match(/image\/(jpeg|jpg|png|gif|svg)/) ) {
+      alert( 'Фотография должна быть в формате jpg, png или gif' );
+      }
+      else if ( file.size > maxFileSize ) {
+      alert( 'Размер фотографии не должен превышать 2 Мб' );
+      }
+      else {
+      preview(file);
+      parentDiv.append('<div class="img_upload_box"><img src=""><input type="file"><button type="button" class="del_upload_box"></button></div>');
+      /* Создание превью */
+      function preview(file) {
+          let reader = new FileReader(), img;
+          reader.addEventListener("load", function(event) {
+          imgUpload.css('opacity', '1');
+          imgUpload.attr('src', event.target.result);
+          });
+          reader.readAsDataURL(file);
+      };
+      }
+  });
+  $(document).on('click', '.del_upload_box', function(){
+      let parentGroup = $(this).parents('.img-group');
+      $(this).parent('.img_upload_box').remove();
+      let l = parentGroup.find("div.img_upload_box").length;
+      if(l == 0){
+      console.log('in');
+      parentGroup.append('<div class="img_upload_box"><img src=""><input type="file"><button type="button" class="del_upload_box"></button></div>');
+      }
+  });
+  });
